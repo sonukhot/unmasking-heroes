@@ -19,8 +19,7 @@ function createHeroBlock(hero) {
 }
 
 function setupHeroReveal() {
-  for (var i = 0; i < heroes.length; i++) {
-    var hero = heroes[i]
+  heroes.forEach(function (hero) {
 
     document.getElementById(hero.id).onmouseover = function () {
       revealSecretIdentity(hero.realName);
@@ -29,7 +28,7 @@ function setupHeroReveal() {
     document.getElementById(hero.id).onmouseout = function () {
       hideSecretIdentity();
     }
-  }
+  })
 }
 
 function setUpHeroBlocks() {
@@ -44,4 +43,6 @@ function setUpHeroBlocks() {
 function loadHeroes() {
   setUpHeroBlocks()
   setupHeroReveal()
+
+
 }
